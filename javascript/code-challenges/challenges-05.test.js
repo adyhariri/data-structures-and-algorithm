@@ -20,9 +20,9 @@ Write a function named addValues that, given an array of numbers as input, uses 
 
 ------------------------------------------------------------------------------------------------ */
 
-const addValues = (arr) => {
+const addValues = (arr) => arr.reduce((accumulator,value)=>accumulator+value,0);
   // Solution code here...
-};
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -36,9 +36,9 @@ Write a function named addPurchases that, given an array of objects as input, us
 
 ------------------------------------------------------------------------------------------------ */
 
-const addPurchases = (arr) => {
+const addPurchases = (arr) => arr.reduce((accumulator,i)=>accumulator+i.purchasePrice,0)
   // Solution code here...
-};
+;
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -48,9 +48,9 @@ Write a function named countNumberOfElements that, given an array as input, uses
 Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
-const countNumberOfElements = (arr) => {
+const countNumberOfElements = (arr) => arr.reduce(accumulator=>accumulator+1,0)
   // Solution code here...
-};
+;
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -109,7 +109,13 @@ let starWarsData = [{
 }];
 
 const returnNames = (arr) => {
+  let names =[];
+  arr.reduce((accumulator,i)=>{
+    names.push(i.name);
+  },0);
+  return names ;
   // Solution code here...
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -121,6 +127,8 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 ------------------------------------------------------------------------------------------------ */
 
 const reversedString = (str) => {
+  // let i =str.length-1;
+  return str.split('').reduce((accumulator,i)=>i+accumulator,'');
   // Solution code here...
 };
 
